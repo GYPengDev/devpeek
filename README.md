@@ -1,8 +1,10 @@
 # DevPeek
 
-Packet capture and remote debugging toolkit for mobile WebView and Hybrid Apps.
+DevPeek is a local HTTPS proxy and runtime debugging toolkit for mobile WebView and Hybrid Apps.
 
-DevPeek focuses on mobile WebView inspection, runtime debugging, JavaScript injection, and page-level debugging workflows.
+It focuses on traffic inspection, JavaScript injection, runtime visibility, and page-level debugging workflows for embedded mobile web environments.
+
+🌐 Website: https://devpeek.ypgao.com/
 
 ---
 
@@ -12,12 +14,11 @@ DevPeek focuses on mobile WebView inspection, runtime debugging, JavaScript inje
 - Mobile proxy debugging
 - WebView traffic inspection
 - Runtime JavaScript injection
-- Console / Network hook
+- Console and network hooks
 - Page-level debugging
-- Remote debugging foundation
-- Hybrid App debugging support
+- Session replay support
 - Runtime environment inspection
-- DevTools-style debugging workflow
+- Hybrid App debugging workflows
 
 ---
 
@@ -30,7 +31,7 @@ Traditional proxy tools are excellent for:
 - API debugging
 - Network inspection
 
-But debugging mobile WebView and Hybrid Apps is still difficult.
+However, debugging embedded mobile web environments is still difficult.
 
 Especially when working with:
 
@@ -41,57 +42,33 @@ Especially when working with:
 - Embedded H5 pages
 - Mini app containers
 
-In many cases, developers do not want:
+In many cases, developers do not need full-device traffic capture only.
 
-> Full device traffic capture
+They also need runtime visibility for the current page, including:
 
-They want:
-
-> Current page runtime visibility
-
-Including:
-
-- Current page requests
+- Network requests
 - Console output
+- JavaScript execution
 - Runtime behavior
 - DOM interaction
-- JavaScript execution
-- WebView environment
-- Runtime hooks
 - Injection-based debugging
+- WebView runtime inspection
 
 DevPeek is designed around:
 
-**Proxy + Runtime Injection + Remote Debugging**
+> Proxy + Runtime Injection + Page-Level Debugging
 
-instead of traditional packet capture only.
-
----
-
-## Vision
-
-DevPeek aims to provide a DevTools-like debugging experience for mobile WebView and Hybrid runtime environments.
-
-The project is evolving toward:
-
-- Runtime inspection
-- Remote page debugging
-- WebView DevTools
-- DOM inspection
-- Page-level traffic analysis
-- JavaScript runtime hooks
-- Remote console debugging
-- Mobile debugging workflow optimization
+instead of traditional packet capture alone.
 
 ---
 
 ## Current Status
 
-DevPeek is under active development.
+DevPeek is currently under active development.
 
-Some features are still experimental and evolving.
+Some features are still experimental and may change over time.
 
-Currently distributed through GitHub Releases only.
+The project is currently distributed through GitHub Releases only.
 
 Source code is not publicly available at this time.
 
@@ -99,31 +76,37 @@ Source code is not publicly available at this time.
 
 ## Download
 
-Download the latest version from the **Releases** page.
+Download the latest version from the GitHub Releases page.
+
+Official website:
+
+https://devpeek.ypgao.com/
 
 ---
 
 ## Suitable For
 
-- H5 developers
+- Mobile frontend developers
 - Hybrid App developers
+- H5 developers
 - React Native developers
 - Flutter WebView debugging
 - uni-app debugging
-- Mobile frontend developers
 - Mobile debugging engineers
 
 ---
 
 ## Roadmap
 
+Planned improvements include:
+
 - Remote DOM inspection
-- Runtime breakpoint support
-- Enhanced WebView debugging
+- Runtime breakpoint debugging
+- Enhanced WebView inspection
 - Page-level request filtering
-- DevTools-style inspection workflow
 - Remote JavaScript execution
-- Cross-device debugging improvements
+- Cross-device debugging workflows
+- Improved runtime visibility tools
 
 ---
 
