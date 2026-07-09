@@ -1,0 +1,70 @@
+name: Bug report
+description: Report a DevPeek defect (desktop app)
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for the report. For **how-to questions**, use [Discussions](https://github.com/GYPengDev/devpeek/discussions) instead.
+        Docs: https://devpeek.ypgao.com/en/docs/
+
+  - type: input
+    id: version
+    attributes:
+      label: DevPeek version
+      description: From About → DevPeek (e.g. 1.1.4)
+      placeholder: "1.1.4"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: os
+    attributes:
+      label: OS
+      options:
+        - Windows 11
+        - Windows 10
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Numbered steps. Include proxy/SSL setup if relevant.
+      placeholder: |
+        1. Install DevPeek ...
+        2. Set phone proxy to ...
+        3. ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs or screenshots
+      description: Gear menu → Developer Tools console, or redacted screenshots. No secrets/PII.
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Checklist
+      options:
+        - label: I searched [existing issues](https://github.com/GYPengDev/devpeek/issues) and [FAQ](https://devpeek.ypgao.com/en/docs/faq/)
+          required: true

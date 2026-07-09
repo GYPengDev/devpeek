@@ -1,180 +1,69 @@
-# DevPeek Changelog & Feature Overview
+# Changelog
 
-DevPeek is a mobile WebView debugging and traffic inspection toolkit focused on runtime debugging, JavaScript injection, and page-level inspection workflows.
-
-This document focuses on **UI and functional changes per version**. For implementation details, please refer to the repository history.
+> **Canonical changelog (full detail, all versions):**  
+> [devpeek.ypgao.com/changelog](https://devpeek.ypgao.com/en/changelog/) · [中文](https://devpeek.ypgao.com/changelog/)
+>
+> This file lists **recent stable highlights** for GitHub Releases and search indexing. It is not a copy of the website.
 
 ---
 
-## 1.1.3 (Current Version)
+## 1.1.4
 
-### Settings (Top-right Gear Menu)
+**Theme:** polish, persistence, and mobile-debug quality-of-life.
 
-- **Developer Tools**: Now available even in packaged builds. Used for viewing errors and copying console logs.
-- **Open Config Directory**: Opens the local folder where DevPeek stores settings and global scripts. Useful for backup, migration, or manual inspection. If no configuration exists yet, it will be created automatically before opening.
+- Rebrand to **DevPeek** with updated logo and title bar identity.
+- Capture history persisted to **SQLite** — paginated list survives restarts; script-processed headers/bodies saved.
+- Mock can intercept **request-only** or **response-only**; rule matching and editor flow improved.
+- Title bar shows LAN IP + proxy port with **one-click copy** for phone setup.
+- Debug view styling and element highlight alignment improved; less DB write churn.
+- Replay: open local recording files; Chrome extension captures fuller console + network for playback.
+- LAN collaboration: delete imported entries; faster peer leave broadcast on app exit.
+- Certificate install wizard and optional browser CA import on supported platforms.
 
-### Runtime & Scripts
+[Full 1.1.4 notes on website →](https://devpeek.ypgao.com/en/changelog/1.1.4/)
 
-- **Global Scripts**: Fixed an issue where scripts might not take effect when breakpoints were enabled or previously configured.
-- **Breakpoints**: Improved stability to reduce unexpected behavior caused by invalid or abnormal breakpoint configurations.
-- Improved runtime hook initialization stability for injected debugging scripts.
+---
 
-### Request Details
+## 1.1.3
 
-- Fixed layout instability when switching requests.
-- Top-level tabs (Overview / Headers / Body / Response, etc.) are now **always visible and fixed in order**, preventing accidental UI shifts when switching requests.
-- Empty states are shown instead of hiding sections when no data is available.
-- Inner tabs (e.g. Raw / Preview / Post-processed views) only appear when content exists, reducing unnecessary tab switching.
+**Theme:** settings access, request-detail stability, unified window chrome.
 
-### Independent Windows
+- **Developer Tools** available in packaged builds from the gear menu.
+- **Open config directory** for backup/migration of settings and global scripts.
+- Global scripts / breakpoints initialization fixes.
+- Request detail tabs fixed in order; inner tabs only when content exists.
+- Independent dialogs (preferences, SSL, replay, etc.) share custom title bar + window controls.
 
-(Preferences, Script Manager, Breakpoints / SSL / Throttling settings, About, Replay, Update dialog, Script logs, Certificate guide, etc.)
-
-- Unified window style with custom title bar and standard window controls (minimize / maximize / close).
-- Consistent desktop experience across all dialogs.
-- Certificate download and guidance windows also follow the same UI standard.
+[Full 1.1.3 notes on website →](https://devpeek.ypgao.com/en/changelog/1.1.3/)
 
 ---
 
 ## 1.1.2
 
-Improved consistency between light and dark themes across the entire UI.
+**Theme:** light/dark consistency across capture, debug, replay, and preferences.
 
-### Main Window
-
-- Title bar, menus, and window controls now adapt to theme.
-- Better contrast in light mode; unified purple-gray style in dark mode.
-
-### Debug Panel
-
-- Right-side panels (Elements / Console / Network / Session) now follow theme styles.
-- Improved readability of trees, logs, and request data.
-- Device preview area now adapts visually to theme.
-- Better runtime console readability for injected logs and script output.
-
-### Replay
-
-- Unified styling for replay container, device frame, timeline, and side panels.
-
-### Preferences
-
-- Input fields (e.g. proxy port) now follow consistent styling in dark mode.
+[Full 1.1.2 notes on website →](https://devpeek.ypgao.com/en/changelog/1.1.2/)
 
 ---
 
 ## 1.1.1
 
-UI and menu restructuring.
+**Theme:** menu restructuring — changelog separated from About.
 
-### Settings & About
-
-- “Version Changelog” and “About DevPeek” are now separate entries.
-- Changelog is prioritized above About.
-- About window shows version, runtime environment, and basic tech stack information.
+[Full 1.1.1 notes on website →](https://devpeek.ypgao.com/en/changelog/1.1.1/)
 
 ---
 
-## 1.0.1
+## 1.0.x — first public releases
 
-Improvements in runtime debugging preview, extension workflow, and replay stability.
+- Local HTTP(S) proxy with MITM CA, per-client tabs, breakpoints, throttling, global scripts.
+- Mobile web debug foundation, replay window, LAN collaboration, Chromium extension.
+- Built-in updater (Windows/macOS/Linux depending on channel).
 
-### Debug Preview
-
-- Improved request routing stability.
-- Better synchronization between mirrored device view and real page.
-- Console and network data are displayed more accurately.
-- Local page debugging no longer forces proxy interception, reducing unnecessary routing issues.
-- Fixed scroll and layout issues in mirrored view.
-- Improved runtime injection stability in WebView environments.
-
-### Request List & Details
-
-- Preserves active tab when switching requests.
-- Response body opens in preview mode by default.
-- Improved search consistency across raw and parsed content.
-
-### Extension & Launch
-
-- Added guidance for Chrome extension installation.
-- Fixed replay timeline synchronization issues.
-- Supports `devpeek://` protocol for external launch.
-
-### Session & Replay
-
-- Improved session caching visibility.
-- Fixed replay blank screen and scaling issues.
-- Replay moved to independent window.
-
----
-
-## 1.0.0
-
-First public release.
-
-### Capture & Runtime Inspection
-
-- Local HTTP(S) proxy server (default port: 8888).
-- Captures HTTP/HTTPS requests from proxied devices.
-- Runtime inspection for mobile WebView environments.
-- JavaScript injection support for debugging workflows.
-- SSL decryption enabled by default using a generated CA certificate (for authorized use only).
-- Request inspection: headers, body, response, and overview.
-- Per-client IP filtering and session separation.
-- Tree-style grouping by domain (optional).
-
-### System Proxy
-
-- One-click system proxy setup.
-- Automatic proxy cleanup on exit.
-- Periodic consistency check for proxy settings.
-
-### HTTPS & Certificates
-
-- Built-in SSL interception with CA certificate.
-- Install/export certificate for local or mobile devices.
-- Host-based HTTPS decryption rules.
-
-### Breakpoints & Throttling
-
-- Request/response breakpoints with rule-based control.
-- Throttling simulation (latency, bandwidth limits).
-
-### Global Scripts & Runtime Hooks
-
-- Script injection at different request lifecycle stages.
-- Runtime JavaScript hook support.
-- Script logs available in dedicated window.
-
-### UI & Preferences
-
-- Theme switching (light/dark).
-- Language support.
-- Proxy port auto-restart on change.
-
-### Replay & Remote Debugging
-
-- Request replay from history with independent window support.
-- Device preview and mirrored debugging foundation.
-- Remote debugging workflow support.
-
-### Collaboration & Extension
-
-- Local network sharing for session data.
-- Chrome extension support for capturing and forwarding data.
-
-### Update System
-
-- Built-in update checking (Windows/macOS/Linux supported depending on distribution).
-
-### Startup & Shutdown
-
-- Automatic proxy start sequence.
-- Graceful shutdown with proxy cleanup and certificate service stop.
+[1.0.1 notes →](https://devpeek.ypgao.com/en/changelog/1.0.1/) · [1.0.0 notes →](https://devpeek.ypgao.com/en/changelog/1.0.0/)
 
 ---
 
 ## License
 
-DevPeek is proprietary software.
-
-All rights reserved.
+DevPeek is proprietary software. All rights reserved.

@@ -1,0 +1,12 @@
+blank_issues_enabled: false
+
+contact_links:
+  - name: Documentation
+    url: https://devpeek.ypgao.com/en/docs/
+    about: Step-by-step guides, FAQ, and videos on the official site
+  - name: Questions & how-to
+    url: https://github.com/GYPengDev/devpeek/discussions
+    about: Ask the community — bugs go in Issues
+  - name: Contact
+    url: https://devpeek.ypgao.com/en/contact/
+    about: Private or commercial inquiries

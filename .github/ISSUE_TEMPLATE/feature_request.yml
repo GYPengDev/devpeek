@@ -1,0 +1,53 @@
+name: Feature request
+description: Suggest an improvement to DevPeek
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Describe the **problem** and **use case**. Links to website docs help: https://devpeek.ypgao.com/en/docs/
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What pain are you hitting today?
+      placeholder: When debugging uni-app WebView, I need ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed solution
+      description: What would DevPeek do?
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Charles, scripts, other tools — what did you try?
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Capture / proxy
+        - Param transform
+        - Mock / breakpoints
+        - Mobile debug / replay
+        - Collaboration
+        - Extension
+        - UI / UX
+        - Other
+
+  - type: checkboxes
+    id: beta
+    attributes:
+      label: Beta program
+      options:
+        - label: I am willing to test beta builds if available

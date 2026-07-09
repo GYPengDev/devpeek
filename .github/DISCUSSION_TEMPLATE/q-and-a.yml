@@ -1,0 +1,37 @@
+title: Q&A
+labels: ["question"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Ask a **usage question** about DevPeek (proxy setup, param transform, mobile debug, etc.).
+
+        - **Bug?** → [Bug report issue](https://github.com/GYPengDev/devpeek/issues/new?template=bug_report.yml)
+        - **Docs:** https://devpeek.ypgao.com/en/docs/ · [中文](https://devpeek.ypgao.com/docs/)
+
+  - type: textarea
+    id: question
+    attributes:
+      label: Question
+      description: What are you trying to do? What happened instead?
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: DevPeek version
+      placeholder: "1.1.4"
+
+  - type: dropdown
+    id: topic
+    attributes:
+      label: Topic
+      options:
+        - Install & proxy setup
+        - SSL / certificates
+        - Param transform
+        - Mock / breakpoints
+        - Mobile H5 debug
+        - Collaboration
+        - Other
