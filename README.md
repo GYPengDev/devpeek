@@ -1,7 +1,7 @@
 <h1 align="center">DevPeek</h1>
 
 <p align="center">
-  <strong>Local HTTPS proxy &amp; mobile web debugging — one workflow from capture to page-level inspection</strong>
+  <strong>Local HTTP(S) packet capture — MITM proxy, param transform, visual Mock, WebSocket</strong>
 </p>
 
 <p align="center">
@@ -28,13 +28,11 @@
 
 ---
 
-DevPeek is a **Windows / macOS desktop app** for developers and QA who debug **mobile H5**, **Hybrid Apps**, and **WebView** traffic through a local **HTTP(S) proxy**. Current stable: **1.3.0**.
+DevPeek is a **Windows / macOS** local **HTTP(S) 抓包** app: MITM proxy, decrypted capture list, param transform, visual Mock, and WebSocket. Current stable: **1.3.0**.
 
-It is built around one idea:
+It is built around:
 
-> **Proxy + param transform + visual Mock + built-in mobile debug panels**
-
-—not packet capture alone.
+> **Capture + param transform + visual Mock**
 
 > **About this repository:** Official **distribution, docs index, and feedback hub**. Application source code is **proprietary** and not published here.
 
@@ -47,7 +45,6 @@ Classic proxy tools excel at TLS interception and API inspection. DevPeek target
 | Scenario | Typical pain | DevPeek angle |
 |----------|--------------|---------------|
 | Body is HTTPS-plain but fields are AES/Base64 | Copy ciphertext between proxy, scripts, and Postman | [**Param transform**](./docs/param-transform.md) — edit plaintext in-app, re-encrypt on send |
-| Bug only reproduces on a real phone | DevTools on desktop cannot see the embedded page | [**Mobile debug panels**](./docs/mobile-h5-debugging.md) mirror proxied HTML on your PC |
 | Mock rules are tedious to hand-write | Regex and JSON editing for every endpoint | Visual Mock from a captured request; **groups** to switch scenes |
 | Teammate needs the same request | Export files, sync timestamps manually | LAN collaboration — send a plaintext HTTP request to a peer |
 | Long-lived WS / WSS | HTTP tools hide handshake and frames | WebSocket sessions + [WS Flow](https://devpeek.ypgao.com/en/docs/wsmock-dsl/) (preview) |
@@ -101,11 +98,6 @@ See also: [Charles Proxy alternative — when to pick DevPeek](./docs/charles-al
 - Proxied **WS / WSS** sessions alongside HTTP (handshake, frames)
 - WS Flow (preview) for multi-turn mocks — [website guide](https://devpeek.ypgao.com/en/docs/wsmock-dsl/)
 
-**Mobile web debugging**
-
-- Mirror proxied HTML with self-built Elements / Console / Network panels
-- [GitHub guide](./docs/mobile-h5-debugging.md) · [Website guide](https://devpeek.ypgao.com/en/docs/debug-replay/)
-
 **Also included**
 
 - LAN collaboration · Chromium extension import · SQLite history · Windows / macOS auto-update
@@ -146,7 +138,6 @@ This repo hosts **short, scenario-focused guides** for discovery and search. Ste
 | Quick start | [docs/quick-start.md](./docs/quick-start.md) | [EN](https://devpeek.ypgao.com/en/docs/quick-start/) · [ZH](https://devpeek.ypgao.com/docs/quick-start/) |
 | Charles alternative | [docs/charles-alternative.md](./docs/charles-alternative.md) | [Capture docs](https://devpeek.ypgao.com/en/docs/capture/) |
 | Param transform | [docs/param-transform.md](./docs/param-transform.md) | [EN](https://devpeek.ypgao.com/en/docs/param-transform/) · [ZH](https://devpeek.ypgao.com/docs/param-transform/) |
-| Mobile H5 debug | [docs/mobile-h5-debugging.md](./docs/mobile-h5-debugging.md) | [EN](https://devpeek.ypgao.com/en/docs/debug-replay/) · [ZH](https://devpeek.ypgao.com/docs/debug-replay/) |
 | WebSocket Mock | — | [EN](https://devpeek.ypgao.com/en/docs/wsmock-dsl/) · [ZH](https://devpeek.ypgao.com/docs/wsmock-dsl/) |
 | Mock, SSL, FAQ | — | [docs index](https://devpeek.ypgao.com/en/docs/) |
 

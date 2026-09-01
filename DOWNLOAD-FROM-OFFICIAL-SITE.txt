@@ -1,0 +1,17 @@
+这不是 DevPeek 安装包。
+
+GitHub 这个仓库只放文档和反馈入口，不含应用源码或安装包。
+Source code (zip / tar.gz) 也只是本仓库文档快照，不是软件。
+
+请从官网下载 Windows / macOS 安装包：
+
+  https://devpeek.ypgao.com/
+
+This is not the DevPeek installer.
+
+This GitHub repository is the docs and feedback hub only.
+"Source code" archives on this Release are documentation snapshots, not the app.
+
+Download Windows / macOS installers from the official site:
+
+  https://devpeek.ypgao.com/

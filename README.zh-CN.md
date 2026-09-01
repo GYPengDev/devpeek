@@ -1,7 +1,7 @@
 <h1 align="center">DevPeek</h1>
 
 <p align="center">
-  <strong>本地 HTTPS 抓包 + 移动端网页调试 — 从看见流量到排查页面，一条工作流</strong>
+  <strong>本地 HTTP(S) 抓包 — MITM 代理、参数转换、可视化 Mock、WebSocket</strong>
 </p>
 
 <p align="center">
@@ -28,13 +28,11 @@
 
 ---
 
-DevPeek 是面向开发与测试的 **Windows / macOS 桌面 HTTPS 代理工具**，专注 **手机 H5、Hybrid App、WebView** 联调场景。当前稳定版：**1.3.0**。
+DevPeek 是面向开发与测试的 **Windows / macOS** 本机 **HTTP(S) 抓包**工具：MITM 代理、解密列表、参数转换、可视化 Mock、WebSocket。当前稳定版：**1.3.0**。
 
 核心理念：
 
-> **抓包 + 参数转换 + 可视化 Mock + 自研移动端调试面板**
-
-——不只做「看见流量」。
+> **抓包 + 参数转换 + 可视化 Mock**
 
 > **关于本仓库：** DevPeek 的 **官方发布、文档索引与反馈入口**。应用**源码闭源**，不在此公开。
 
@@ -47,7 +45,6 @@ DevPeek 是面向开发与测试的 **Windows / macOS 桌面 HTTPS 代理工具*
 | 场景 | 常见痛点 | DevPeek 做法 |
 |------|----------|--------------|
 | HTTPS 已解密，字段仍是 AES/Base64 | 在代理、脚本、Postman 之间来回复制密文 | [**参数转换**](./docs/param-transform.md) — 界面里改明文，发出时自动加密 |
-| 问题只在真机 H5 出现 | 电脑 DevTools 看不到内嵌页 | [**移动端调试面板**](./docs/mobile-h5-debugging.md) — 经代理镜像手机网页 |
 | Mock 规则手写成本高 | 每个接口写正则、改 JSON | 从已抓请求上**可视化**配 Mock；**分组**按场景启停 |
 | 同事要对同一条请求 | 导文件、对时间戳 | 局域网协作 — 把明文 HTTP 发给伙伴 |
 | 长连接 WS / WSS | HTTP 工具只看到握手 | WebSocket 会话 + [WS Flow](https://devpeek.ypgao.com/docs/wsmock-dsl/)（预览） |
@@ -101,11 +98,6 @@ DevPeek 是面向开发与测试的 **Windows / macOS 桌面 HTTPS 代理工具*
 - 经代理的 **WS / WSS** 会话与 HTTP 并列（握手、帧）
 - WS Flow（预览）描述多轮对话 — [官网教程](https://devpeek.ypgao.com/docs/wsmock-dsl/)
 
-**移动端网页调试**
-
-- 自研 Elements / Console / Network 面板镜像经代理的 HTML
-- [GitHub 短文](./docs/mobile-h5-debugging.md) · [官网教程](https://devpeek.ypgao.com/docs/debug-replay/)
-
 **其他**
 
 - 局域网协作 · Chromium 扩展导入 · SQLite 历史 · Windows / macOS 自动更新
@@ -146,7 +138,6 @@ DevPeek 是面向开发与测试的 **Windows / macOS 桌面 HTTPS 代理工具*
 | 快速开始 | [docs/quick-start.md](./docs/quick-start.md) | [中文](https://devpeek.ypgao.com/docs/quick-start/) · [EN](https://devpeek.ypgao.com/en/docs/quick-start/) |
 | Charles 替代 | [docs/charles-alternative.md](./docs/charles-alternative.md) | [抓包文档](https://devpeek.ypgao.com/docs/capture/) |
 | 参数转换 | [docs/param-transform.md](./docs/param-transform.md) | [中文](https://devpeek.ypgao.com/docs/param-transform/) · [EN](https://devpeek.ypgao.com/en/docs/param-transform/) |
-| 移动端 H5 调试 | [docs/mobile-h5-debugging.md](./docs/mobile-h5-debugging.md) | [中文](https://devpeek.ypgao.com/docs/debug-replay/) · [EN](https://devpeek.ypgao.com/en/docs/debug-replay/) |
 | WebSocket Mock | — | [中文](https://devpeek.ypgao.com/docs/wsmock-dsl/) · [EN](https://devpeek.ypgao.com/en/docs/wsmock-dsl/) |
 
 ---
