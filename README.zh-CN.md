@@ -14,6 +14,7 @@
 
 <p align="center">
   <a href="https://devpeek.ypgao.com/"><img src="https://img.shields.io/badge/下载-Windows-blue?style=for-the-badge" alt="下载 DevPeek Windows 版"></a>
+  <a href="https://devpeek.ypgao.com/"><img src="https://img.shields.io/badge/下载-macOS-black?style=for-the-badge" alt="下载 DevPeek macOS 版"></a>
   <a href="https://devpeek.ypgao.com/docs/quick-start/"><img src="https://img.shields.io/badge/教程-快速开始-green?style=for-the-badge" alt="DevPeek 快速开始"></a>
 </p>
 
@@ -27,7 +28,7 @@
 
 ---
 
-DevPeek 是面向开发与测试的 **Windows 桌面 HTTPS 代理工具**，专注 **手机 H5、Hybrid App、WebView** 联调场景。
+DevPeek 是面向开发与测试的 **Windows / macOS 桌面 HTTPS 代理工具**，专注 **手机 H5、Hybrid App、WebView** 联调场景。当前稳定版：**1.3.0**。
 
 核心理念：
 
@@ -47,8 +48,9 @@ DevPeek 是面向开发与测试的 **Windows 桌面 HTTPS 代理工具**，专�
 |------|----------|--------------|
 | HTTPS 已解密，字段仍是 AES/Base64 | 在代理、脚本、Postman 之间来回复制密文 | [**参数转换**](./docs/param-transform.md) — 界面里改明文，发出时自动加密 |
 | 问题只在真机 H5 出现 | 电脑 DevTools 看不到内嵌页 | [**移动端调试面板**](./docs/mobile-h5-debugging.md) — 经代理镜像手机网页 |
-| Mock 规则手写成本高 | 每个接口写正则、改 JSON | 从已抓请求上**可视化**配 Mock |
-| 同事要对同一会话 | 导文件、对时间戳 | 局域网发现与协作共享 |
+| Mock 规则手写成本高 | 每个接口写正则、改 JSON | 从已抓请求上**可视化**配 Mock；**分组**按场景启停 |
+| 同事要对同一条请求 | 导文件、对时间戳 | 局域网协作 — 把明文 HTTP 发给伙伴 |
+| 长连接 WS / WSS | HTTP 工具只看到握手 | WebSocket 会话 + [WS Flow](https://devpeek.ypgao.com/docs/wsmock-dsl/)（预览） |
 
 延伸阅读：[Charles 替代 — 什么时候选 DevPeek](./docs/charles-alternative.md)
 
@@ -81,6 +83,7 @@ DevPeek 是面向开发与测试的 **Windows 桌面 HTTPS 代理工具**，专�
 - 按客户端 IP 分 Tab（手机、浏览器、测试 App 互不干扰）
 - 响应体搜索（正则、大小写）
 - 断点、弱网、生命周期脚本
+- 请求置顶、按内容类型筛选、列宽会记住
 
 **参数转换**（差异化能力）
 
@@ -90,8 +93,13 @@ DevPeek 是面向开发与测试的 **Windows 桌面 HTTPS 代理工具**，专�
 
 **Mock 与转发**
 
-- 仅拦请求或仅拦响应
-- Map Route / 转发规则对接本地服务
+- 仅拦请求或仅拦响应；规则**分组**，组内批量启停
+- Map Route / 转发规则（整域或 `host + path` 前缀）对接本地服务
+
+**WebSocket**
+
+- 经代理的 **WS / WSS** 会话与 HTTP 并列（握手、帧）
+- WS Flow（预览）描述多轮对话 — [官网教程](https://devpeek.ypgao.com/docs/wsmock-dsl/)
 
 **移动端网页调试**
 
@@ -100,7 +108,7 @@ DevPeek 是面向开发与测试的 **Windows 桌面 HTTPS 代理工具**，专�
 
 **其他**
 
-- 局域网协作 · Chromium 扩展导入 · SQLite 历史 · 自动更新
+- 局域网协作 · Chromium 扩展导入 · SQLite 历史 · Windows / macOS 自动更新
 
 桌面端**基础功能永久免费**，Pro / 团队版见 [定价](https://devpeek.ypgao.com/pricing/)。
 
@@ -108,7 +116,7 @@ DevPeek 是面向开发与测试的 **Windows 桌面 HTTPS 代理工具**，专�
 
 ## 5 分钟上手
 
-1. 在 [官网](https://devpeek.ypgao.com/) 或 [GitHub Releases](https://github.com/GYPengDev/devpeek/releases) 下载 Windows 安装包。
+1. 在 [官网](https://devpeek.ypgao.com/) 或 [GitHub Releases](https://github.com/GYPengDev/devpeek/releases) 下载 Windows 或 macOS 安装包。
 2. 手机 Wi‑Fi 代理填 `电脑局域网IP:8888`（标题栏显示端口，可一键复制）。
 3. 手机安装并**完全信任**根 CA；目标域名加入 SSL 解密范围。
 4. **抓包** Tab 看流量；**调试** Tab 选中手机客户端，刷新页面即可镜像。
@@ -125,7 +133,7 @@ DevPeek 是面向开发与测试的 **Windows 桌面 HTTPS 代理工具**，专�
 | **GitHub Releases** | https://github.com/GYPengDev/devpeek/releases |
 | 安装与证书 | https://devpeek.ypgao.com/docs/install/ |
 
-当前发布 **Windows** 安装包，其他平台以 Release 说明为准。
+当前发布 **Windows**（NSIS）与 **macOS**（DMG，Apple Silicon / Intel）安装包。安装包在官网；本仓库跟踪说明与链接。
 
 ---
 
@@ -139,6 +147,7 @@ DevPeek 是面向开发与测试的 **Windows 桌面 HTTPS 代理工具**，专�
 | Charles 替代 | [docs/charles-alternative.md](./docs/charles-alternative.md) | [抓包文档](https://devpeek.ypgao.com/docs/capture/) |
 | 参数转换 | [docs/param-transform.md](./docs/param-transform.md) | [中文](https://devpeek.ypgao.com/docs/param-transform/) · [EN](https://devpeek.ypgao.com/en/docs/param-transform/) |
 | 移动端 H5 调试 | [docs/mobile-h5-debugging.md](./docs/mobile-h5-debugging.md) | [中文](https://devpeek.ypgao.com/docs/debug-replay/) · [EN](https://devpeek.ypgao.com/en/docs/debug-replay/) |
+| WebSocket Mock | — | [中文](https://devpeek.ypgao.com/docs/wsmock-dsl/) · [EN](https://devpeek.ypgao.com/en/docs/wsmock-dsl/) |
 
 ---
 

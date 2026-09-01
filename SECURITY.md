@@ -18,7 +18,7 @@ Instead, report privately via:
 
 Include:
 
-- DevPeek version and Windows build
+- DevPeek version and OS (Windows / macOS, including architecture)
 - Steps to reproduce
 - Impact assessment (data exposure, MITM scope, local privilege, etc.)
 

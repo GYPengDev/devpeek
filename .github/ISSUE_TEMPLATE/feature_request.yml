@@ -39,8 +39,10 @@ body:
         - Capture / proxy
         - Param transform
         - Mock / breakpoints
+        - WebSocket / WS Flow
         - Mobile debug / replay
         - Collaboration
+        - Auto-update
         - Extension
         - UI / UX
         - Other

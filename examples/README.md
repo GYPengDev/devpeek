@@ -75,14 +75,17 @@ Website: [Mock docs](https://devpeek.ypgao.com/en/docs/mock/)
 
 ## Forward rule (Map Route)
 
-**Goal:** Map `h5.example.com` to a local dev server.
+**Goal:** Map `h5.example.com` to a local dev server, or only a path prefix.
 
 Plain-text forward rules (one mapping per line):
 
 ```text
 h5.example.com	http://localhost:3300
 api.example.com	http://127.0.0.1:8080
+api.example.com/v2/	http://127.0.0.1:9000
 ```
+
+`host + path` prefix (1.2.1+): longest path wins; the browser URL stays the original host.
 
 Website: [Map Route docs](https://devpeek.ypgao.com/en/docs/map-route/)
 

@@ -6,28 +6,28 @@ A **5-minute checklist** for your first DevPeek session. For screenshots, videos
 
 ## Before you begin
 
-- Windows PC with DevPeek installed ([download](https://devpeek.ypgao.com/))
-- Phone and PC on the **same Wi‑Fi** (or routable LAN)
+- Windows or macOS with DevPeek **1.3.0+** installed ([download](https://devpeek.ypgao.com/))
+- Phone and computer on the **same Wi‑Fi** (or routable LAN)
 - A target H5 page or API you are **authorized** to debug
 
 ---
 
 ## Step 1 — Start the proxy
 
-1. Launch DevPeek.
+1. Launch DevPeek (tray launcher stays running after you close the window).
 2. Confirm the proxy is listening (default port **8888**; shown in the title bar).
 3. Click the **LAN IP** in the title bar to copy `IP:port` for the phone.
 
-**Sanity check:** With system proxy enabled on the PC, browse locally — you should see requests in the Capture list.
+**Sanity check:** With system proxy enabled on this computer, browse locally — you should see requests in the Capture list.
 
 ---
 
-## Step 2 — Point the phone at your PC
+## Step 2 — Point the phone at your computer
 
 On the phone Wi‑Fi settings, set HTTP proxy to manual:
 
 ```text
-Host: <your PC LAN IP>
+Host: <your computer LAN IP>
 Port: 8888
 ```
 
@@ -37,7 +37,7 @@ Each device appears as its own **client tab** in DevPeek (by IP).
 
 ## Step 3 — Trust the CA & enable decrypt
 
-1. Export or download the DevPeek root CA from the app.
+1. Export or download the DevPeek root CA from the app (QR download works on the phone).
 2. Install on the phone and **fully trust** it (iOS: Settings → General → About → Certificate Trust Settings).
 3. Add target hostnames to **SSL decrypt scope** in DevPeek.
 
@@ -54,8 +54,11 @@ Open the **Capture** tab:
 - Select the phone’s client tab.
 - Tap a request → inspect Headers / Body / Response.
 - Use search to filter by URL, Host, or response body keywords.
+- Pin important rows; filter by content type (JSON, HTML, …) when the list is noisy.
 
 Next: [Param transform](./param-transform.md) if fields are still encrypted at the app layer.
+
+WebSocket / WSS sessions appear next to HTTP. Multi-turn mocks: [WebSocket Mock](https://devpeek.ypgao.com/en/docs/wsmock-dsl/).
 
 ---
 
@@ -91,3 +94,4 @@ More: [FAQ on website](https://devpeek.ypgao.com/en/docs/faq/)
 - Encrypted JSON fields → [Param transform](./param-transform.md)
 - Compare with Charles/Fiddler → [Charles alternative](./charles-alternative.md)
 - Example configs → [examples/](../examples/)
+- WebSocket Flow → [website](https://devpeek.ypgao.com/en/docs/wsmock-dsl/)

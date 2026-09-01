@@ -10,7 +10,7 @@ This is a **decision guide**, not a feature matrix copied from marketing pages. 
 - Deep ecosystem familiarity in enterprise QA teams
 - macOS-first workflows with long-standing muscle memory
 
-If your job is **pure transport inspection** on macOS and you already have Charles licenses and scripts, switching may not pay off immediately.
+If your job is **pure transport inspection** and you already have Charles licenses and scripts, switching may not pay off immediately. DevPeek now ships on **Windows and macOS**; pick it when param transform, visual Mock, or mobile page mirror matter more than a Charles-shaped workflow.
 
 ---
 
@@ -56,7 +56,7 @@ Exporting `.chls` or HAR and syncing with a teammate is slow. DevPeek discovers 
 
 | Dimension | Charles / Fiddler | DevPeek |
 |-----------|-------------------|---------|
-| Primary platform today | macOS / Windows (Charles), Windows (Fiddler) | **Windows** (check releases for others) |
+| Primary platform today | macOS / Windows (Charles), Windows (Fiddler) | **Windows and macOS** |
 | HTTPS MITM | ✅ Core strength | ✅ With CA + host decrypt rules |
 | App-layer field decrypt/edit | Manual scripts / external tools | ✅ Built-in param transform |
 | Mobile page runtime debug | Limited / external WebView tools | ✅ Built-in debug panels over proxy |
@@ -70,8 +70,8 @@ Exporting `.chls` or HAR and syncing with a teammate is slow. DevPeek discovers 
 
 You do not have to rip out Charles on day one.
 
-1. Keep Charles for macOS-only teammates if needed.
-2. Use DevPeek on Windows for **mobile H5 joint debugging** sessions.
+1. Keep Charles where the team already has licenses and muscle memory.
+2. Run DevPeek on Windows or macOS for **mobile H5 joint debugging** sessions.
 3. Port the painful part first: **param transform rules** and **visual Mock** for your top 5 endpoints.
 4. Align CA trust on test phones once — same MITM concept, different root.
 

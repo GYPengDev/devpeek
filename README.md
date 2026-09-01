@@ -14,6 +14,7 @@
 
 <p align="center">
   <a href="https://devpeek.ypgao.com/"><img src="https://img.shields.io/badge/Download-Windows-blue?style=for-the-badge" alt="Download DevPeek for Windows"></a>
+  <a href="https://devpeek.ypgao.com/"><img src="https://img.shields.io/badge/Download-macOS-black?style=for-the-badge" alt="Download DevPeek for macOS"></a>
   <a href="https://devpeek.ypgao.com/en/docs/quick-start/"><img src="https://img.shields.io/badge/Docs-Quick%20Start-green?style=for-the-badge" alt="DevPeek quick start"></a>
 </p>
 
@@ -27,7 +28,7 @@
 
 ---
 
-DevPeek is a **Windows desktop app** for developers and QA who debug **mobile H5**, **Hybrid Apps**, and **WebView** traffic through a local **HTTP(S) proxy**.
+DevPeek is a **Windows / macOS desktop app** for developers and QA who debug **mobile H5**, **Hybrid Apps**, and **WebView** traffic through a local **HTTP(S) proxy**. Current stable: **1.3.0**.
 
 It is built around one idea:
 
@@ -47,8 +48,9 @@ Classic proxy tools excel at TLS interception and API inspection. DevPeek target
 |----------|--------------|---------------|
 | Body is HTTPS-plain but fields are AES/Base64 | Copy ciphertext between proxy, scripts, and Postman | [**Param transform**](./docs/param-transform.md) — edit plaintext in-app, re-encrypt on send |
 | Bug only reproduces on a real phone | DevTools on desktop cannot see the embedded page | [**Mobile debug panels**](./docs/mobile-h5-debugging.md) mirror proxied HTML on your PC |
-| Mock rules are tedious to hand-write | Regex and JSON editing for every endpoint | Visual Mock from a captured request |
-| Teammate needs the same session | Export files, sync timestamps manually | LAN collaboration & session share |
+| Mock rules are tedious to hand-write | Regex and JSON editing for every endpoint | Visual Mock from a captured request; **groups** to switch scenes |
+| Teammate needs the same request | Export files, sync timestamps manually | LAN collaboration — send a plaintext HTTP request to a peer |
+| Long-lived WS / WSS | HTTP tools hide handshake and frames | WebSocket sessions + [WS Flow](https://devpeek.ypgao.com/en/docs/wsmock-dsl/) (preview) |
 
 See also: [Charles Proxy alternative — when to pick DevPeek](./docs/charles-alternative.md)
 
@@ -81,6 +83,7 @@ See also: [Charles Proxy alternative — when to pick DevPeek](./docs/charles-al
 - Client tabs by IP — phone, browser, test app stay separated
 - Response-body search (regex, case options)
 - Breakpoints, throttling, lifecycle scripts
+- Pin requests; content-type filter; remembered column widths
 
 **Param transform** *(differentiator)*
 
@@ -90,8 +93,13 @@ See also: [Charles Proxy alternative — when to pick DevPeek](./docs/charles-al
 
 **Mock & routing**
 
-- Request-only or response-only intercept
-- Map Route / forward rules for local backends
+- Request-only or response-only intercept; **rule groups** with batch on/off
+- Map Route / forward rules (`host` or `host + path` prefix) for local backends
+
+**WebSocket**
+
+- Proxied **WS / WSS** sessions alongside HTTP (handshake, frames)
+- WS Flow (preview) for multi-turn mocks — [website guide](https://devpeek.ypgao.com/en/docs/wsmock-dsl/)
 
 **Mobile web debugging**
 
@@ -100,7 +108,7 @@ See also: [Charles Proxy alternative — when to pick DevPeek](./docs/charles-al
 
 **Also included**
 
-- LAN collaboration · Chromium extension import · SQLite history · auto-update
+- LAN collaboration · Chromium extension import · SQLite history · Windows / macOS auto-update
 
 Core desktop features are **free forever**. Pro & Team tiers: [pricing](https://devpeek.ypgao.com/en/pricing/).
 
@@ -108,7 +116,7 @@ Core desktop features are **free forever**. Pro & Team tiers: [pricing](https://
 
 ## Quick start (5 minutes)
 
-1. [Download](https://devpeek.ypgao.com/) the Windows installer (or [GitHub Releases](https://github.com/GYPengDev/devpeek/releases)).
+1. [Download](https://devpeek.ypgao.com/) the Windows or macOS installer (or [GitHub Releases](https://github.com/GYPengDev/devpeek/releases)).
 2. Set the phone Wi‑Fi proxy to `PC_LAN_IP:8888` (port shown in the title bar; one-click copy).
 3. Install & fully trust the DevPeek root CA; add target hosts to SSL decrypt scope.
 4. **Capture** tab → inspect traffic. **Debug** tab → select the phone client, refresh the page to mirror.
@@ -125,7 +133,7 @@ Checklist & troubleshooting: [docs/quick-start.md](./docs/quick-start.md) · [We
 | **GitHub Releases** | https://github.com/GYPengDev/devpeek/releases |
 | Install & certificates | https://devpeek.ypgao.com/en/docs/install/ |
 
-Windows builds are published today. Other platforms — see release notes.
+**Windows** (NSIS) and **macOS** (DMG, Apple Silicon and Intel) are published on the website. Installers stay on the official site; this repo tracks notes and links.
 
 ---
 
@@ -139,6 +147,7 @@ This repo hosts **short, scenario-focused guides** for discovery and search. Ste
 | Charles alternative | [docs/charles-alternative.md](./docs/charles-alternative.md) | [Capture docs](https://devpeek.ypgao.com/en/docs/capture/) |
 | Param transform | [docs/param-transform.md](./docs/param-transform.md) | [EN](https://devpeek.ypgao.com/en/docs/param-transform/) · [ZH](https://devpeek.ypgao.com/docs/param-transform/) |
 | Mobile H5 debug | [docs/mobile-h5-debugging.md](./docs/mobile-h5-debugging.md) | [EN](https://devpeek.ypgao.com/en/docs/debug-replay/) · [ZH](https://devpeek.ypgao.com/docs/debug-replay/) |
+| WebSocket Mock | — | [EN](https://devpeek.ypgao.com/en/docs/wsmock-dsl/) · [ZH](https://devpeek.ypgao.com/docs/wsmock-dsl/) |
 | Mock, SSL, FAQ | — | [docs index](https://devpeek.ypgao.com/en/docs/) |
 
 ---

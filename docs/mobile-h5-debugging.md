@@ -67,7 +67,7 @@ If it stays on **“Waiting for device connection”**, fix proxy/SSL first — 
 
 ## vs Charles + Safari Web Inspector
 
-Charles excels at traffic. Safari Web Inspector needs USB/cable workflows and does not unify **Mock + param transform + page mirror** in one Windows-centric loop.
+Charles excels at traffic. Safari Web Inspector needs USB/cable workflows and does not unify **Mock + param transform + page mirror** in one desktop loop (Windows or macOS).
 
 DevPeek targets teams that already proxy mobile traffic but still lose hours on **page-level** issues.
 
